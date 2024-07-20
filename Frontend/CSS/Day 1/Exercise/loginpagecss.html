@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        .logindiv{
+            border: 2px solid;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 150px;
+            left: 300px;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 7px 7px;
+            text-align: center;
+            background-color: black;
+            color: antiquewhite;
+        }
+        .Loginbutton{
+            width: 100px;
+            height: 30px;
+            font-size:20px ;
+            border: none;
+            background-color: white;
+            color: grey;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .user{
+            border-radius: 7px;
+        }
+        .pass{
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logindiv">
+        <h2 align ="center">Login Page</h2>
+    <form >
+        <label for="login-username" >Username</label>
+        <input type="text" required  class="user"><br><br>
+        <label for="login-password" >Password</label>
+        <input type="password" required class="pass"><br><br>
+        <input type="submit" value="Login" class="Loginbutton">
+    </form>
+    
+</div>
+</body>
+</html>
