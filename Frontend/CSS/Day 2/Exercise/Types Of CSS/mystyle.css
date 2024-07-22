@@ -1,0 +1,8 @@
+.heading3{
+    border: 2px solid blue;
+    text-align: center;
+    width: 50%;
+    color: blue;
+    background-color: wheat;
+    cursor: pointer;
+}
