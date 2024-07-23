@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function strfun(){
+        let a = document.getElementById("string").value;
+        document.write("Str Length: <br>"+a.length)
+        document.write("<br>Str charAt: <br>"+a.charAt(5))
+        document.write("<br>Str Slice: <br>"+a.slice(0,8))
+        document.write("<br>Str SubString: <br>"+a.substring(3,7))
+        document.write("<br>Str Substr: <br>"+a.substr(4,8))
+        document.write("<br>Str toUpperCase: <br>"+a.toUpperCase())
+        document.write("<br>Str toLowerCase: <br>"+a.toLowerCase())
+        document.write("<br>Str Concat: <br>"+a.concat(" ","Ronaldo"))
+        document.write("<br>Str trim: <br>"+a.trim())
+        document.write("<br>Str trimStart: <br>"+a.trimStart())
+        document.write("<br>Str trimEnd: <br>"+a.trimEnd())
+        document.write("<br>Str repeat: <br>"+a.repeat(3))
+        document.write("<br>Str replace: <br>"+a.replace("Ronaldo","Messi"))
+        document.write("<br>Str replaceAll: <br>"+a.replaceAll("Ronaldo","Messi"))
+        document.write("<br>Str split: <br>"+a.split(" "))
+    }
+    </script>
+</head>
+<body>
+    Enter Text: <input type="text" id ="string" />
+    <br><br>
+    <button onclick="strfun()">Submit</button>
+    <div id="result"></div>
+</body>
+</html>

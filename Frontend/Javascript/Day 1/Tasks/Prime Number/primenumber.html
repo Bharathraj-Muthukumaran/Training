@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function primeno(){
+            let a = parseInt(document.getElementById("n1").value);
+            let b = a/2;
+            var flag = 0;
+            if(a==1 || a==0){
+                document.write("It is neither Prime nor Composite")
+            }
+            else{
+                for(var i=2;i<=b;i++){
+                    if(a % i == 0){
+                        document.write("It is Not a Prime Number");
+                        flag = 1;
+                        break;
+                    }
+                }
+                if(flag == 0){
+                    document.write("It is a Prime Number");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    Enter Number: <input type="text" id ="n1" />
+    <br><br>
+    <button onclick="primeno()">Check Prime</button>
+    <br><br>
+</body>
+</html>
