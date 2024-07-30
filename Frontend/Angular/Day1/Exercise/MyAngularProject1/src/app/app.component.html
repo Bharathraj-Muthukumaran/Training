@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Interpolation Example</h1>
+  <!--<h1>Interpolation Example</h1>
   Name : {{name}}
   <br>
   age : {{age}}
@@ -21,9 +21,26 @@
   Email <input type="text" [value]="email"/>
   <h1>Event Binding Example</h1>
  <button (click) = "changeName()">Change Name</button>
- <br>
- <img [src] ="imagePath" width="300" height="200"/>
- <br>
- <button (click)="changeImage()">Change Image</button>
+ <br>-->
+ <h1>Structural and Attribute Directives</h1><br>
+  <button (click)="changeFlag()">Show or Hide Div</button>
+  <br><br>
+  <div *ngIf="flag" [ngStyle]="myStyle">
+     <br>
+     <ul>
+      <li *ngFor="let vec of vehicles" (click) = "setSelectedItem(vec)">{{vec}}</li>
+     </ul>
+     <br>
+     <b>You have selected : {{selectedVehicle}}</b>
+     <br>
+     <div [ngSwitch] ="selectedVehicle">
+      <font color="green" *ngSwitchCase="'TwoWheeler'">Bike</font>
+      <font color="green" *ngSwitchCase="'ThreeWheeler'">Auto</font>
+      <font color="green" *ngSwitchCase="'FourWheeler'">Car</font>
+      <font color="green" *ngSwitchDefault>Invalid</font>
+     </div>
+     <br>
+     <button (click)="changeStyle()">change style</button>
+  </div>
 </body>
 </html>
