@@ -1,0 +1,51 @@
+create table sales_table (
+    sale_id number(10) PRIMARY KEY,
+    product_id number(10),
+    quantity_sold number(10),
+    sale_date date,
+    total_price number(10, 2)
+);
+
+insert into sales_table values(1,101,5,to_date('2024-01-01','YYYY-MM-DD'),2500.00);
+insert into sales_table values(2,102,3,to_date('2024-01-02','YYYY-MM-DD'),900.00);
+insert into sales_table values(3,103,2,to_date('2024-01-02','YYYY-MM-DD'),60.00);
+insert into sales_table values(4,104,4,to_date('2024-01-03','YYYY-MM-DD'),80.00);
+insert into sales_table values(5,105,6,to_date('2024-01-03','YYYY-MM-DD'),90.00);
+
+select * from sales_table;
+
+select sale_id,quantity_sold from sales_table;
+
+select sale_id,to_char(sale_date,'YYYY-MM-DD') as sale_date from sales_table;
+
+select * from sales_table where total_price>100;
+
+select sale_id,total_price from sales_table where sale_date = to_date('2024-01-03','YYYY-MM-DD');
+
+select sale_id,product_id,total_price from sales_table where quantity_sold>4;
+
+select * from sales_table where sale_id in(1,3,5);
+
+select * from sales_table where total_price between 90 and 1000;
+
+select * from sales_table where total_price not between 90 and 1000;
+
+select * from sales_table where sale_id not in(1,3,5);
+
+update sales_table set total_price = 500 where sale_id in(1,3,5);
+
+select product_id,quantity_sold,to_char(sale_date,'YYYY-MM-DD') as sale_date,total_price from tbl_sales;
+
+delete from sales_table where total_price not between 90 and 1000;
+
+select sale_id,product_id,quantity_sold,to_char(sale_date,'YYYY-MM-DD') as sale_date,total_price from sales_table order by sale_id;
+
+select sale_id,product_id,quantity_sold,to_char(sale_date,'YYYY-MM-DD') as sale_date,total_price from sales_table order by sale_id desc;
+
+alter table sales_table rename column sale_id to sales_id;
+
+alter table sales_table drop column sales_id;
+
+rename sales_table to tbl_sales;
+
+drop table tbl_sales;

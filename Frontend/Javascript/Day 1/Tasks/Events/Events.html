@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function greet(){
+            alert("Welcome");
+        }
+        function prom(){
+            let n = prompt("Enter Name:");
+            alert("welcome "+n);
+        }
+        function leave(){
+            return "want to leave the page?";
+        }
+        function clicks() {
+            alert("You Clicked");
+        }
+        document.getElementById("mouover").onmouseover = function(){mouseover()};
+        function mouseover(){
+            document.getElementById("mouover").style.color="red";
+        }
+    </script>                                                                           
+</head>
+<body onload="greet()" onbeforeunload="return leave()"> 
+    <h1 id = "mouover">Mouse Over</h1>
+    <button type="button" onclick= "clicks()">Click Here</button>
+    <br><br>
+    <button onclick="prom()">click</button>
+</body>
+</html>

@@ -1,0 +1,61 @@
+create table client_Master(
+    Client_No varchar(20) PRIMARY KEY,
+    Name varchar(100) NOT NULL,
+    City varchar(100),
+    Pincode number(10),
+    Bal_due number(10)
+);
+insert into client_Master(Client_No,Name,City,Pincode,Bal_due)values('C00001','SMITHA JAIN','Mumbai',400054,15000);
+insert into client_Master(Client_No,Name,City,Pincode,Bal_due)values('C00002','VANDANA RAO','Chennai',780001,0);
+insert into client_Master(Client_No,Name,City,Pincode,Bal_due)values('C00003','PREM PUJARI','Mumbai',400057,5000);
+insert into client_Master(Client_No,Name,City,Pincode,Bal_due)values('C00004','BASU NATH','Mumbai',400056,0);
+insert into client_Master(Client_No,Name,City,Pincode,Bal_due)values('C00005','RAVI SHANKAR','Delhi',100001,2000);
+insert into client_Master(Client_No,Name,City,Pincode,Bal_due)values('C00006','ROOPA','Mumbai',400050,0);
+
+
+select * from client_master;
+
+CREATE TABLE Sale_Order (
+    Order_No varchar(20) PRIMARY KEY,
+    Order_Date DATE,
+    Client_No varchar(20),
+    Salesman_No varchar(20),
+    Dely_Date DATE,
+    Order_Status varchar(20)
+);
+
+INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status) VALUES ('O19001', TO_DATE('12-Jan-13', 'DD-Mon-YY'), 'C00001', 'S00001', TO_DATE('20-Jan-13', 'DD-Mon-YY'), 'In process');
+INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status) VALUES ('O19002', TO_DATE('25-Jan-13', 'DD-Mon-YY'), 'C00002', 'S00002', TO_DATE('27-Jan-13', 'DD-Mon-YY'), 'Cancelled');
+INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status) VALUES ('O46865', TO_DATE('18-Feb-13', 'DD-Mon-YY'), 'C00003', 'S00003', TO_DATE('20-Feb-13', 'DD-Mon-YY'), 'Fulfilled');
+INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status) VALUES ('O19003', TO_DATE('03-Apr-13', 'DD-Mon-YY'), 'C00001', 'S00001', TO_DATE('07-Apr-13', 'DD-Mon-YY'), 'Fulfilled');
+INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status) VALUES ('O46866', TO_DATE('20-May-13', 'DD-Mon-YY'), 'C00004', 'S00002', TO_DATE('07-Apr-13', 'DD-Mon-YY'), 'Cancelled');
+INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status) VALUES ('O19008', TO_DATE('24-May-13', 'DD-Mon-YY'), 'C00005', 'S00004', TO_DATE('26-May-13', 'DD-Mon-YY'), 'In process');
+
+
+Select * from Sale_order;
+
+1.SELECT * FROM CLIENT_MASTER WHERE Bal_due = 0;
+
+2.UPDATE CLIENT_MASTER SET City = 'Jaipur' WHERE Client_No = 'C00004';
+
+3.Select * from client_Master where City = 'Mumbai';
+
+4.SELECT cm.Name, cm.City, cm.Pincode
+FROM CLIENT_MASTER cm
+JOIN SALE_ORDER so ON cm.Client_No = so.Client_No
+WHERE so.Order_No = 'O19003'
+
+UNION ALL
+
+SELECT cm.Name, cm.City, cm.Pincode
+FROM CLIENT_MASTER cm
+JOIN SALE_ORDER so ON cm.Client_No = so.Client_No
+WHERE so.Order_No = 'O19002';
+
+5.SELECT Name || ' lives in the city of ' || City AS Sentence
+FROM CLIENT_MASTER;
+
+6.SELECT cm.Client_No, cm.Name, cm.City, cm.Pincode
+FROM CLIENT_MASTER cm
+JOIN SALE_ORDER so ON cm.Client_No = so.Client_No
+WHERE so.Order_Status = 'In process';

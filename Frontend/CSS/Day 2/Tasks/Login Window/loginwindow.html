@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Window</title>
+    <style>
+        *{
+            color: white;
+        }
+        body{
+            background-image: url("background1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 1px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .box{
+            border: 2px solid white;
+            width: 30rem;
+            background-color: rgba(0, 0, 0, 0.557);
+            
+        }
+        h2{
+            
+            text-align: center;
+        }
+        .credentials{
+           display: flex;
+           justify-content: center; 
+        }
+        .btn{
+            width: 21rem;
+            padding: 0.5rem;
+            color: white;
+            background-color: green;
+            border: none;
+            box-shadow: 2px 2px;
+            border-radius: 5px ;
+            cursor: pointer;
+        }
+        .em input{
+            width: 20rem;
+            display: flex;
+            justify-content: center;
+        }
+        .p input{
+            width: 20rem;
+        }
+        input
+        {
+            border: none;
+            background: none;
+            border-bottom: 2px solid #fff;
+        }
+        .img{
+            text-align: center;
+            border-radius: 60px;
+            margin-top: -50px;
+        }
+        img{
+            top: 20%;;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+    <div class="img"><img src="usericon2.jpg" alt=""width="100px" height="100px" style="border-radius:50px;"></div>
+    <h2>LOGIN WINDOW</h2><br>
+
+<div class="credentials" style="padding-bottom: 20px;">    
+    <div>
+    <div class="em"><input type="email" placeholder="Your Email Address"></div><br><br>
+    <div class="p"><input type="password" placeholder="Your Password"></div><br><br>
+    <div class="check"><label><input type="checkbox">Agree With <u>Terms & Condition</u></label></div>
+    <br>
+    <button class="btn">Login</button> 
+    </form>
+    </div>
+</div>
+</body>
+</html>
